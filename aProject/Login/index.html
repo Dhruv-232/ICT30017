@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACMS Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="login-container">
+    <div id="role-selection">
+      <h2>Role Selection</h2>
+      <div class="role-buttons">
+        <button onclick="selectRole('staff')">Staff</button>
+        <button onclick="selectRole('resident')">Resident</button>
+        <button onclick="selectRole('doctor')">Doctor</button>
+        <button onclick="selectRole('nurse')">Nurse</button>
+        <button onclick="selectRole('admin')">Admin</button>
+        <button onclick="selectRole('family')">Family</button>
+      </div>
+    </div>
+
+    <div id="login-form" class="hidden form-section">
+      <h2>Login</h2>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" id="email" placeholder="Enter your email" />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter password" />
+      </div>
+      <button onclick="checkLogin()">Login</button>
+    </div>
+
+    <div id="otp-verification" class="hidden form-section">
+      <h2>Verify Your Identity</h2>
+      <div class="form-group">
+        <label>Enter OTP</label>
+        <input type="number" id="otp-input" placeholder="6-digit OTP" />
+      </div>
+      <button onclick="verifyOTP()">Verify</button>
+      <button id="resend-btn" class="hidden" onclick="generateOTP()">Resend Code</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init('RhLpA2f8iveIq8QNt'); 
+  </script>
+
+
+</body>
+
+</html>
